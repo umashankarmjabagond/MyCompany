@@ -1,58 +1,69 @@
-import Link from 'next/link';
-import Hero from './components/Hero';
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Metadata } from "next";
+import Script from "next/script";
+import { JSX } from "react";
+import CoreServices from "./components/CoreServices";
+import TeamSection from "./components/Team";
+import ProcessSection from "./components/Process";
 
-export const metadata = {
-  title: 'SkillForge AI Technologies — AI Tools, Web Development & Training',
+
+const Hero = dynamic(() => import("./components/Hero"), { ssr: true });
+const About = dynamic(() => import("./components/About"), { ssr: true });
+const ProjectsSection = dynamic(() => import("./components/ProjectsSection"), { ssr: true });
+
+
+export const metadata: Metadata = {
+  title: "SkillForge AI Technologies — AI Tools, Web Development & Training",
   description:
-    'SkillForge AI Technologies provides AI-driven automation, full-stack web and mobile app development, and professional training for enterprises worldwide.',
+    "SkillForge AI Technologies provides AI-driven automation, full-stack web and mobile app development, and professional training for enterprises worldwide.",
+  openGraph: {
+    title: "SkillForge AI Technologies",
+    description:
+      "AI-driven automation, full-stack development, and training services",
+    url: "https://skillforgeai.com",
+    images: [{ url: "https://skillforgeai.com/logo.png" }],
+    siteName: "SkillForge AI Technologies",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SkillForge AI Technologies",
+    description: "AI Tools, Web Development & Training",
+    images: ["https://skillforgeai.com/logo.png"],
+  },
 };
 
-export default function Home() {
+
+
+export default function Home(): JSX.Element {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "SkillForge AI Technologies",
-    "url": "https://skillforgeai.com",
-    "logo": "https://skillforgeai.com/logo.png",
-    "sameAs": [
+    name: "SkillForge AI Technologies",
+    url: "https://skillforgeai.com",
+    logo: "https://skillforgeai.com/logo.png",
+    sameAs: [
       "https://www.linkedin.com/company/skillforgeai",
-      "https://twitter.com/skillforgeai"
-    ]
+      "https://twitter.com/skillforgeai",
+    ],
   };
 
+
   return (
-    <main>
-      <script
+    <main className="min-h-screen">
+      <Script
         type="application/ld+json"
+        id="organization-jsonld"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <Hero />
-
-      {/* Services Overview */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-semibold mb-8 text-center">Our Core Services</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <Link href="/services/web-development" className="p-6 border rounded-lg hover:shadow">
-            <h3 className="font-bold text-lg">Web & Mobile Development</h3>
-            <p className="mt-2 text-slate-600 text-sm">
-              Scalable full-stack applications built with React, Next.js, Node.js, and cloud-native architecture.
-            </p>
-          </Link>
-          <Link href="/services/ai-tools" className="p-6 border rounded-lg hover:shadow">
-            <h3 className="font-bold text-lg">AI Tools & Automation</h3>
-            <p className="mt-2 text-slate-600 text-sm">
-              Custom AI models, chat assistants, and predictive analytics to power smarter business decisions.
-            </p>
-          </Link>
-          <Link href="/services/training" className="p-6 border rounded-lg hover:shadow">
-            <h3 className="font-bold text-lg">Corporate & Online Training</h3>
-            <p className="mt-2 text-slate-600 text-sm">
-              Hands-on courses in full-stack, cloud, and AI development designed for professionals and enterprises.
-            </p>
-          </Link>
-        </div>
-      </section>
+      <About />
+      <ProjectsSection />
+      <CoreServices />
+      <ProcessSection />
+      <TeamSection />
     </main>
   );
 }
