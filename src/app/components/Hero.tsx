@@ -13,7 +13,7 @@ export default function Hero() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-snug">
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-snug">
           Empowering Businesses with <span className="text-sky-600">AI</span>, Cloud & Full-Stack Innovation
         </h1>
 
@@ -32,7 +32,7 @@ export default function Hero() {
           </Link>
           <Link
             href="/contact"
-            className="px-6 py-3 border border-slate-300 rounded-md hover:bg-slate-50 transition"
+            className="px-6 py-3 border border-slate-300 rounded-md hover:bg-slate-50 transition text-white"
           >
             Contact Us
           </Link>
@@ -47,9 +47,9 @@ export default function Hero() {
         <Image
           src="/bannerImage.png"
           alt="Banner"
-          width={800}
-          height={600}
-          className="object-contain mx-auto"
+          width={1000}
+          height={1000}
+          className="object-contain"
         />
       </motion.div>
 

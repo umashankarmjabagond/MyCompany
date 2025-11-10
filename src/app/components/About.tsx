@@ -41,7 +41,7 @@ export default function About() {
     return (
         <section className="w-full bg-gray-900 py-16 sm:px-6">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold mb-10 text-center">About Us</h2>
+                <h2 className="text-3xl font-bold mb-10 text-center text-white">About Us</h2>
 
                 <div className="space-y-4">
                     {aboutData.map((item, index) => (
