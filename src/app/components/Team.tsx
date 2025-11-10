@@ -24,7 +24,7 @@ export default function TeamSection() {
             qualification: "B.Tech in Electrical Engineering",
             experience: "8+ years in Software Development",
             designation: "Founder & CEO",
-            image: "/team/umashankar.jpg",
+            image: "/PavanPic2.jfif",
         },
         {
             name: "Umashankar Jabagond",
