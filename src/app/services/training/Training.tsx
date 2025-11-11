@@ -1,112 +1,100 @@
-"use client"
+"use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
 import { TrainingPrograms } from "@/app/constants/textConstant";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function TrainingClient() {
-    const sectionsRef = useRef<Record<string, HTMLElement | null>>({});
-
-    const scrollToSection = (id: string) => {
-        sectionsRef.current[id]?.scrollIntoView({ behavior: "smooth" });
-    };
-
+export default function TrainingPage() {
     return (
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
-            {/* Header */}
+        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white px-4 sm:px-10 py-16">
+            {/* Page Header */}
             <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-center mb-12"
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
             >
-                <h1 className="text-5xl font-bold text-sky-700 mb-4">
-                    Corporate & Online Training Programs
+                <h1 className="text-4xl sm:text-5xl font-bold mb-3 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
+                    Training Journey
                 </h1>
-                <p className="text-white text-sm sm:text-base max-w-4xl mx-auto">
-                    Upskill your team with real-world, project-driven learning experiences.
-                    Our expert-led programs focus on current technologies from full-stack development
-                    to cloud and AI integration.
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                    A structured, hands-on learning timeline to transform you from a
+                    beginner into a confident Full Stack Developer.
                 </p>
             </motion.div>
 
-            {/* Training Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                {TrainingPrograms.map(({ id, icon: Icon, title }) => (
-                    <motion.div
-                        key={id}
-                        whileHover={{ scale: 1.05 }}
-                        className="p-6 border rounded-2xl shadow-sm cursor-pointer hover:shadow-md transition-all"
-                        onClick={() => scrollToSection(id)}
-                    >
-                        <div className="flex items-center gap-3 mb-3">
-                            <Icon className="text-sky-600 w-6 h-6" />
-                            <h3 className="text-lg font-semibold text-white">{title}</h3>
-                        </div>
-                        <p className="text-white text-sm">
-                            Click to explore detailed course content and key outcomes.
-                        </p>
-                    </motion.div>
-                ))}
-            </div>
+            <div className="relative max-w-6xl mx-auto">
+                <div className="absolute left-5 sm:left-1/2 transform sm:-translate-x-1/2 h-full border-2 border-sky-800" />
 
-            {/* Detailed Sections */}
-            <div className="space-y-24">
-                {TrainingPrograms.map(({ id, title, image, content, Benefits }) => (
-                    <motion.section
-                        key={id}
-                        id={id}
-                        ref={(el) => {
-                            sectionsRef.current[id] = el;
-                        }}
-                        className="scroll-mt-24"
-                        initial={{ opacity: 0, y: 60 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <div className="flex flex-col md:flex-row md:items-start gap-10">
-                            {/* Left: Image + Benefits */}
-                            <div className="md:w-1/2 w-full flex flex-col items-center md:items-start">
+                <div className="flex flex-col space-y-24">
+                    {TrainingPrograms.map((module, index) => (
+                        <div
+                            key={module.id}
+                            className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0
+                                ? "md:flex-row md:pl-10" // left side
+                                : "md:flex-row-reverse md:justify-between md:pr-10" // right side
+                                }`}
+                        >
+                            {/* Timeline Dot */}
+                            <div className="absolute left-5 sm:left-1/2 transform sm:-translate-x-1/2 w-4 h-4 bg-sky-500 rounded-full shadow-lg shadow-sky-500/40 animate-pulse" />
+
+                            {/* Left or Right Block: Image + Benefits */}
+                            <div
+                                className={`md:w-1/2 w-full flex flex-col justify-between mt-10 md:mt-0 ${index % 2 === 0
+                                    ? "md:pr-16" // More space from center line (left side)
+                                    : "md:pl-24" // Extra push for right side
+                                    }`}
+                            >
                                 <motion.div
-                                    initial={{ opacity: 0, x: -60 }}
+                                    initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.8 }}
                                     viewport={{ once: true }}
                                     className="w-full"
                                 >
                                     <Image
-                                        src={image}
-                                        alt={title}
+                                        src={module.image}
+                                        alt={module.title}
                                         width={450}
                                         height={280}
-                                        className="rounded-2xl shadow-md object-cover w-full"
+                                        className="rounded-2xl shadow-md object-fill w-full h-[280px]"
                                     />
                                 </motion.div>
-                                <div className="mt-3 bg-black rounded-xl p-4 w-full shadow-sm border border-sky-700">
+
+                                {/* Benefits box directly below image */}
+                                <div className="mt-4 bg-black/60 rounded-xl p-4 w-full shadow-sm border border-sky-700">
                                     <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">
                                         Key Benefits
                                     </h4>
-                                    <ul className="text-white text-sm list-disc list-inside space-y-1">
-                                        {Benefits.map((b, i) => (
+                                    <ul className="text-gray-300 text-sm list-disc list-inside space-y-1">
+                                        {module.Benefits.map((b, i) => (
                                             <li key={i}>{b}</li>
                                         ))}
                                     </ul>
                                 </div>
                             </div>
 
-                            {/* Right: Content */}
-                            <div className="md:w-1/2 w-full">
-                                <h2 className="text-2xl font-semibold text-white mb-3">{title}</h2>
-                                <p className="text-white text-sm sm:text-base leading-relaxed whitespace-pre-line">
-                                    {content}
+                            {/* Text content (opposite side) */}
+                            <motion.div
+                                initial={{ opacity: 0, x: index % 2 === 0 ? 60 : -60 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true }}
+                                className={`md:w-1/2 w-full mt-8 md:mt-0 ${index % 2 === 0 ? "md:pl-24" : "md:pr-16"
+                                    }`}
+                            >
+                                <h3 className="text-2xl sm:text-3xl font-semibold mb-3 text-sky-400">
+                                    {module.title}
+                                </h3>
+                                <p className="text-gray-300 leading-relaxed">
+                                    {module.content}
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
-                    </motion.section>
-                ))}
+                    ))}
+                </div>
             </div>
-        </main >
+        </div>
     );
 }

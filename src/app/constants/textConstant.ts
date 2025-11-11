@@ -2,7 +2,7 @@ import { Cpu, Bot, LineChart, Workflow, Database, GraduationCap, Code2,
   Cloud,
   Brain,
   FileCode2,
-  Users, } from "lucide-react";
+  Users,Code, Server, Rocket } from "lucide-react";
 
 export const AiToolDetails = [
     {
@@ -192,4 +192,57 @@ Workshops can be conducted onsite or online, focusing on real business challenge
       "Post-training mentorship and support",
     ],
   },
+];
+
+export const wevDevSection = [
+    {
+        id: "frontend",
+        title: "Frontend Development",
+        icon: Code ,
+        image: "/frontend.jpg",
+        content: `
+We build high-performing, responsive, and visually stunning web interfaces using React, Next.js, and TailwindCSS.
+Our frontend development emphasizes UX, accessibility, and speed — ensuring users enjoy every click.
+    `,
+    },
+    {
+        id: "backend",
+        title: "Backend Engineering",
+        icon: Server ,
+        image: "/backend.jpg",
+        content: `
+We create robust backend APIs using Node.js, Express, and Strapi.
+From authentication to business logic, our architecture ensures reliability, scalability, and security.
+    `,
+    },
+    {
+        id: "database",
+        title: "Database Management",
+        icon: Database ,
+        image: "/database.avif",
+        content: `
+We handle both SQL (PostgreSQL) and NoSQL (MongoDB) databases — designing normalized schemas,
+building optimized queries, and ensuring smooth data integration for large-scale systems.
+    `,
+    },
+    {
+        id: "devops",
+        title: "Cloud & DevOps",
+        icon: Cloud ,
+        image: "/cloud.avif",
+        content: `
+We implement continuous integration, containerization, and AWS deployments.
+Docker, CI/CD pipelines, and cloud monitoring help us deliver faster, safer, and more scalable releases.
+    `,
+    },
+    {
+        id: "deployment",
+        title: "Deployment & Optimization",
+        icon: Rocket ,
+        image: "/rocket.jpg",
+        content: `
+Once your app is ready, we focus on SEO, performance tuning, and analytics integration.
+Your web app stays fast, secure, and discoverable across platforms.
+    `,
+    },
 ];

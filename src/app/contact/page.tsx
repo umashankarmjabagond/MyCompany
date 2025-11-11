@@ -13,16 +13,16 @@ export default function ContactPage() {
         Contact Us
       </h1>
 
-      <p className="text-slate-700 mb-8 text-center sm:text-left">
+      <p className="text-white mb-8 text-center sm:text-left">
         Tell us about your project or training needs — we’ll get back within one
         business day.
       </p>
 
-      <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6 md:p-8">
+      <div className=" rounded-2xl shadow-md p-4 sm:p-6 md:p-8">
         <ContactForm />
       </div>
 
-      <section className="mt-10 text-sm text-slate-600 text-center sm:text-left">
+      <section className="mt-10 text-sm text-white text-center sm:text-left">
         <h3 className="font-semibold mb-2">Other ways to reach us</h3>
         <p>
           Email:{" "}
@@ -30,10 +30,10 @@ export default function ContactPage() {
             href="mailto:sales@skillforgeai.com"
             className="text-sky-700 underline hover:text-sky-900 transition"
           >
-            sales@skillforgeai.com
+            umashankarjabagond@skillai.com
           </a>
         </p>
-        <p>Phone: +91-XXXXXXXXXX</p>
+        <p>Phone: +91-9823191415</p>
       </section>
     </main>
   );
