@@ -1,47 +1,34 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import { teamMembers } from "../constants/textConstant";
 
 export default function TeamSection() {
-    const teamMembers = [
-
-        {
-            name: "Shreya Jabagond",
-            qualification: "MBA in Business Management",
-            experience: "4+ years in Marketing & Operations",
-            designation: "Co-Founder & Director",
-            image: "/team/priya.jpg",
-        },
-        {
-            name: "Mahesh Masal",
-            qualification: "B.Tech in Electrical Engineering",
-            experience: "6+ years in Software Development",
-            designation: "Founder & CEO",
-            image: "/MaheshPic.jpeg",
-        },
-        {
-            name: "Pavan Potdar",
-            qualification: "B.Tech in Electrical Engineering",
-            experience: "8+ years in Software Development",
-            designation: "Founder & CEO",
-            image: "/PavanPic2.jfif",
-        },
-        {
-            name: "Umashankar Jabagond",
-            qualification: "B.Tech in Mechanical Engineering",
-            experience: "6+ years in Software Development",
-            designation: "Founder & CEO",
-            image: "/UmashankarPic.jpg",
-        },
-
-    ];
-
     return (
-        <section className="py-16 bg-gray-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <h2 className="text-3xl font-bold text-center mb-12 text-white">Founders & Directors</h2>
+        <section
+            className="px-4 sm:px-10 py-8">
+            <div className="max-w-7xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-16"
+                >
+                    <h2
+                        className="text-4xl sm:text-5xl font-bold mb-4
+                                   bg-gradient-to-r from-amber-400 to-yellow-300
+                                   text-transparent bg-clip-text"
+                    >
+                        Founders & Directors
+                    </h2>
+                    <p className="text-amber-200/80 max-w-2xl mx-auto text-sm sm:text-base">
+                        Meet the leadership team driving SkillForge AI Technologies
+                        with vision, experience, and technical excellence.
+                    </p>
+                </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
                     {teamMembers.map((member, index) => {
                         const slideFrom = index % 2 === 0 ? -50 : 50;
 
@@ -51,20 +38,48 @@ export default function TeamSection() {
                                 initial={{ opacity: 0, x: slideFrom, y: 20 }}
                                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
-                                transition={{ duration: 0.6, delay: index * 0.2, type: 'spring', stiffness: 120 }}
-                                className="bg-[#1a1a1a] flex flex-col items-center p-6 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 border border-gray-700 text-center"
+                                transition={{
+                                    duration: 0.6,
+                                    delay: index * 0.15,
+                                    type: "spring",
+                                    stiffness: 100,
+                                }}
+                                className="group flex flex-col items-center text-center
+                                           bg-gradient-to-br from-amber-900/25 to-black/70
+                                           backdrop-blur-md
+                                           border border-amber-600/30
+                                           rounded-3xl p-6 sm:p-8
+                                           shadow-xl shadow-amber-900/30
+                                           hover:shadow-amber-700/40
+                                           hover:-translate-y-1
+                                           transition-all"
                             >
-                                <div className="w-32 h-32 mb-4">
+                                <div
+                                    className="w-32 h-32 mb-5 rounded-full overflow-hidden
+                                               border-2 border-amber-400
+                                               shadow-lg shadow-amber-900/40"
+                                >
                                     <img
                                         src={member.image}
                                         alt={member.name}
-                                        className="w-full h-full object-fill rounded-full border-2 border-blue-500"
+                                        className="w-full h-full object-fit"
                                     />
                                 </div>
-                                <h3 className="text-xl font-semibold text-white">{member.name}</h3>
-                                <p className="text-gray-400 text-sm mt-1">{member.qualification}</p>
-                                <p className="text-gray-400 text-sm">{member.experience}</p>
-                                <p className="text-blue-500 font-medium mt-2">{member.designation}</p>
+
+                                <h3 className="text-xl font-semibold text-amber-300">
+                                    {member.name}
+                                </h3>
+
+                                <p className="text-amber-200/80 text-sm mt-1">
+                                    {member.qualification}
+                                </p>
+                                <p className="text-amber-200/70 text-sm">
+                                    {member.experience}
+                                </p>
+
+                                <p className="mt-3 text-sm font-semibold text-amber-400">
+                                    {member.designation}
+                                </p>
                             </motion.div>
                         );
                     })}

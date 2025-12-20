@@ -1,16 +1,27 @@
-import { Cpu, Bot, LineChart, Workflow, Database, GraduationCap, Code2,
+import {
+  Cpu,
+  Bot,
+  LineChart,
+  Workflow,
+  Database,
+  GraduationCap,
+  Code2,
   Cloud,
   Brain,
   FileCode2,
-  Users,Code, Server, Rocket } from "lucide-react";
+  Users,
+  Code,
+  Server,
+  Rocket,
+} from "lucide-react";
 
 export const AiToolDetails = [
-    {
-        id: "ai-models",
-        icon: Cpu,
-        title: "AI Model Integration",
-        image: "/aiModel.jpg",
-        content: `
+  {
+    id: "ai-models",
+    icon: Cpu,
+    title: "AI Model Integration",
+    image: "/aiModel.jpg",
+    content: `
 We integrate advanced AI models such as OpenAI GPT, Hugging Face Transformers, and LangChain frameworks directly into enterprise systems. These models help automate content generation, analyze customer feedback, summarize reports, and more.
 
 How It Works:  
@@ -19,14 +30,18 @@ Our engineers study your business process, identify automation opportunities, an
 Real-world Example:  
 A healthcare startup used GPT-based APIs to generate patient summaries automatically from doctor notes, saving 5+ hours daily.
 `,
-Benefits:["Speeds up content and data processing","Delivers domain-specific intelligence","Secure, scalable model integration"]  
-    },
-    {
-        id: "chatbots",
-        icon: Bot,
-        title: "Chatbots & Virtual Assistants",
-        image: "/chatbot.avif",
-        content: `
+    Benefits: [
+      "Speeds up content and data processing",
+      "Delivers domain-specific intelligence",
+      "Secure, scalable model integration",
+    ],
+  },
+  {
+    id: "chatbots",
+    icon: Bot,
+    title: "Chatbots & Virtual Assistants",
+    image: "/chatbot.avif",
+    content: `
 We build AI-powered chatbots that act as your digital customer support team, available 24/7.  
 Our bots use Natural Language Processing (NLP) and Large Language Models (LLMs) to understand intent and deliver human-like conversations.
 
@@ -36,14 +51,18 @@ The bot connects to CRMs like HubSpot, Salesforce, or Zoho for real-time data ac
 Real-world Example:  
 An e-commerce platform integrated our chatbot for order tracking and returns — reducing support calls by 60%.
 `,
-Benefits:["24/7 automated support","Personalized, context-aware replies","Integrates seamlessly with existing systems  "]
-    },
-    {
-        id: "analytics",
-        icon: LineChart,
-        title: "Predictive Analytics",
-        image: "/dataAnalytics.jpg",
-        content: `
+    Benefits: [
+      "24/7 automated support",
+      "Personalized, context-aware replies",
+      "Integrates seamlessly with existing systems  ",
+    ],
+  },
+  {
+    id: "analytics",
+    icon: LineChart,
+    title: "Predictive Analytics",
+    image: "/dataAnalytics.jpg",
+    content: `
 Predictive Analytics allows organizations to forecast future trends, detect risks, and identify opportunities using machine learning.  
 We build interactive dashboards that visualize metrics and predictions in real time.
 
@@ -53,14 +72,18 @@ We process data from CRMs, ERPs, and IoT systems using ML models such as Random 
 Real-world Example:  
 A retail chain predicted weekly product demand with 90% accuracy — reducing overstock by 35%.
 `,
-Benefits:  ["Early risk and opportunity detection","Data-driven business planning","Real-time visualization of performance metrics"]
-    },
-    {
-        id: "automation",
-        icon: Workflow,
-        title: "Process Automation",
-        image: "/processAutomation.avif",
-        content: `
+    Benefits: [
+      "Early risk and opportunity detection",
+      "Data-driven business planning",
+      "Real-time visualization of performance metrics",
+    ],
+  },
+  {
+    id: "automation",
+    icon: Workflow,
+    title: "Process Automation",
+    image: "/processAutomation.avif",
+    content: `
 Process Automation uses AI and scripting to eliminate repetitive manual tasks.  
 We design smart pipelines that handle data entry, reporting, notifications, and synchronization.
 
@@ -70,15 +93,18 @@ Using Node.js, Python, and AWS Lambda, we create event-driven workflows that tri
 Real-world Example:  
 A logistics firm automated shipment tracking and updates through API integration — improving customer communication and saving 10+ hours weekly.
 `,
-Benefits: ["Saves human effort and reduces errors","Boosts team productivity","Improves overall workflow consistency "]
-
-    },
-    {
-        id: "data-intelligence",
-        icon: Database,
-        title: "Data Intelligence",
-        image: "/analytics.avif",
-        content: `
+    Benefits: [
+      "Saves human effort and reduces errors",
+      "Boosts team productivity",
+      "Improves overall workflow consistency ",
+    ],
+  },
+  {
+    id: "data-intelligence",
+    icon: Database,
+    title: "Data Intelligence",
+    image: "/analytics.avif",
+    content: `
 Data Intelligence helps businesses organize, clean, and interpret massive data streams for strategic decision-making.  
 We build data lakes, ETL pipelines, and analytics dashboards that turn raw data into real insights.
 
@@ -88,14 +114,18 @@ We consolidate multi-source data (from APIs, databases, or CRMs) and transform i
 Real-world Example:  
 An ed-tech company visualized student performance metrics across 100+ courses, helping faculty improve outcomes.
 `,
-Benefits: ["Clean, centralized data","Faster reporting and analytics","Strategic, data-driven decision making"] 
-    },
-    {
-        id: "training",
-        icon: GraduationCap,
-        title: "AI Training & Consultation",
-        image: "/aiTraining.jpg",
-        content: `
+    Benefits: [
+      "Clean, centralized data",
+      "Faster reporting and analytics",
+      "Strategic, data-driven decision making",
+    ],
+  },
+  {
+    id: "training",
+    icon: GraduationCap,
+    title: "AI Training",
+    image: "/aiTraining.jpg",
+    content: `
 We provide hands-on AI workshops and corporate training programs designed for both beginners and professionals.  
 Our sessions blend theory with live coding, case studies, and real-world AI projects.
 
@@ -108,12 +138,13 @@ Topics Covered:
 Real-world Example:  
 A university partnered with us for a 3-week bootcamp, where students built their first GPT-powered web apps — preparing them for AI-driven careers.
 `,
-Benefits:["Builds real-world technical confidence","Tailored learning for corporates and academia","Promotes innovation and skill transformation  "] 
-
-    },
-]
-
-
+    Benefits: [
+      "Builds real-world technical confidence",
+      "Tailored learning for corporates and academia",
+      "Promotes innovation and skill transformation  ",
+    ],
+  },
+];
 
 export const TrainingPrograms = [
   {
@@ -173,7 +204,7 @@ Ideal for developers who want to enhance their web solutions with AI-powered int
       "Get guidance on AI-driven business solutions",
     ],
   },
- 
+
   {
     id: "corporate",
     icon: Users,
@@ -195,54 +226,113 @@ Workshops can be conducted onsite or online, focusing on real business challenge
 ];
 
 export const wevDevSection = [
-    {
-        id: "frontend",
-        title: "Frontend Development",
-        icon: Code ,
-        image: "/frontend.jpg",
-        content: `
+  {
+    id: "frontend",
+    title: "Frontend Development",
+    icon: Code,
+    image: "/frontend.jpg",
+    content: `
 We build high-performing, responsive, and visually stunning web interfaces using React, Next.js, and TailwindCSS.
 Our frontend development emphasizes UX, accessibility, and speed — ensuring users enjoy every click.
     `,
-    },
-    {
-        id: "backend",
-        title: "Backend Engineering",
-        icon: Server ,
-        image: "/backend.jpg",
-        content: `
+  },
+  {
+    id: "backend",
+    title: "Backend Engineering",
+    icon: Server,
+    image: "/backend.jpg",
+    content: `
 We create robust backend APIs using Node.js, Express, and Strapi.
 From authentication to business logic, our architecture ensures reliability, scalability, and security.
     `,
-    },
-    {
-        id: "database",
-        title: "Database Management",
-        icon: Database ,
-        image: "/database.avif",
-        content: `
+  },
+  {
+    id: "database",
+    title: "Database Management",
+    icon: Database,
+    image: "/database.avif",
+    content: `
 We handle both SQL (PostgreSQL) and NoSQL (MongoDB) databases — designing normalized schemas,
 building optimized queries, and ensuring smooth data integration for large-scale systems.
     `,
-    },
-    {
-        id: "devops",
-        title: "Cloud & DevOps",
-        icon: Cloud ,
-        image: "/cloud.avif",
-        content: `
+  },
+  {
+    id: "devops",
+    title: "Cloud & DevOps",
+    icon: Cloud,
+    image: "/cloud.avif",
+    content: `
 We implement continuous integration, containerization, and AWS deployments.
 Docker, CI/CD pipelines, and cloud monitoring help us deliver faster, safer, and more scalable releases.
     `,
-    },
-    {
-        id: "deployment",
-        title: "Deployment & Optimization",
-        icon: Rocket ,
-        image: "/rocket.jpg",
-        content: `
+  },
+  {
+    id: "deployment",
+    title: "Deployment & Optimization",
+    icon: Rocket,
+    image: "/rocket.jpg",
+    content: `
 Once your app is ready, we focus on SEO, performance tuning, and analytics integration.
 Your web app stays fast, secure, and discoverable across platforms.
     `,
-    },
+  },
+];
+
+export const teamMembers = [
+  {
+    name: "Shreya Jabagond",
+    qualification: "MBA in Business Management",
+    experience: "4+ years in Marketing & Operations",
+    designation: "Co-Founder & Director",
+    image: "/team/priya.jpg",
+  },
+  {
+    name: "Mahesh Masal",
+    qualification: "B.Tech in Electrical Engineering",
+    experience: "6+ years in Software Development",
+    designation: "Founder & CEO",
+    image: "/MaheshPic.jpeg",
+  },
+  {
+    name: "Pavan Potdar",
+    qualification: "B.Tech in Electrical Engineering",
+    experience: "8+ years in Software Development",
+    designation: "Founder & CEO",
+    image: "/PavanPic2.jfif",
+  },
+  {
+    name: "Umashankar Jabagond",
+    qualification: "B.Tech in Mechanical Engineering",
+    experience: "6+ years in Software Development",
+    designation: "Founder & CEO",
+    image: "/UmashankarPic.jpg",
+  },
+];
+
+export const aboutData = [
+  {
+    title: "Company Overview",
+    content:
+      "SkillForge AI Technologies Pvt Ltd is a next-generation technology company dedicated to delivering intelligent digital solutions that fuel business growth and operational efficiency. We specialize in web development, mobile application development, AI tool integration, and professional training programs.",
+  },
+  {
+    title: "Web Development",
+    content:
+      "Our web development services focus on creating highly responsive, scalable, and secure websites that drive engagement and deliver an exceptional user experience.",
+  },
+  {
+    title: "Mobile Development",
+    content:
+      "In mobile development, we craft intuitive and high-performance applications for both Android and iOS platforms.",
+  },
+  {
+    title: "AI Tools",
+    content:
+      "Our expertise in AI tools empowers businesses to harness the potential of artificial intelligence. From machine learning models to automation tools and predictive analytics, we help organizations optimize workflows.",
+  },
+  {
+    title: "Training Programs",
+    content:
+      "Our training programs equip professionals and students with the skills needed to excel in the tech industry with hands-on experience.",
+  },
 ];

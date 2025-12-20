@@ -3,80 +3,97 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 bg-black border-b border-gray-800 shadow-sm">
+    <header
+      className="sticky top-0 z-50
+                 bg-gradient-to-r from-amber-900/50 via-amber-800/40 to-amber-900/50
+                 backdrop-blur-md
+                 border-b border-amber-600/30
+                 shadow-lg shadow-amber-900/30"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
           className="text-lg sm:text-xl font-bold tracking-tight text-white"
         >
-          SkillForge <span className="text-sky-600">AI</span> Technologies
+          SkillForge{" "}
+          <span className="bg-gradient-to-r from-amber-400 to-yellow-300 text-transparent bg-clip-text">
+            AI
+          </span>{" "}
+          Technologies
         </Link>
 
-        <nav className="hidden md:flex space-x-6 text-sm font-medium text-white">
-          <Link href="/services/web-development" className="hover:text-sky-600">
-            Web Dev
-          </Link>
-          <Link href="/services/ai-tools" className="hover:text-sky-600">
-            AI Tools
-          </Link>
-          <Link href="/services/training" className="hover:text-sky-600">
-            Training
-          </Link>
-          <Link href="/contact" className="hover:text-sky-600">
-            Contact
-          </Link>
+        <nav className="hidden md:flex items-center space-x-2 text-sm font-semibold">
+          {[
+            { href: "/services/web-development", label: "Web Dev" },
+            { href: "/services/ai-tools", label: "AI Tools" },
+            { href: "/services/training", label: "Training" },
+            { href: "/contact", label: "Contact" },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`px-4 py-2 rounded-full transition-all
+                ${isActive(href)
+                  ? "bg-gradient-to-r from-amber-400 to-yellow-300 text-black shadow-md shadow-amber-400/40"
+                  : "text-amber-200 hover:text-amber-300 hover:bg-amber-500/10"
+                }
+              `}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           aria-label="Toggle menu"
-          className="md:hidden text-white hover:text-sky-600 transition"
+          className="md:hidden text-amber-200 hover:text-amber-300 transition"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-800 bg-black shadow-inner">
-          <nav className="flex flex-col items-center space-y-3 py-4 text-sm font-medium text-white">
-            <Link
-              href="/services/web-development"
-              className="hover:text-sky-600"
-              onClick={() => setMenuOpen(false)}
-            >
-              Web Dev
-            </Link>
-            <Link
-              href="/services/ai-tools"
-              className="hover:text-sky-600"
-              onClick={() => setMenuOpen(false)}
-            >
-              AI Tools
-            </Link>
-            <Link
-              href="/services/training"
-              className="hover:text-sky-600"
-              onClick={() => setMenuOpen(false)}
-            >
-              Training
-            </Link>
-            <Link
-              href="/contact"
-              className="hover:text-sky-600"
-              onClick={() => setMenuOpen(false)}
-            >
-              Contact
-            </Link>
+        <div
+          className="md:hidden
+                     bg-gradient-to-b from-amber-900/60 to-black
+                     border-t border-amber-600/30
+                     shadow-inner"
+        >
+          <nav className="flex flex-col items-center space-y-3 py-5 text-sm font-semibold">
+            {[
+              { href: "/services/web-development", label: "Web Dev" },
+              { href: "/services/ai-tools", label: "AI Tools" },
+              { href: "/services/training", label: "Training" },
+              { href: "/contact", label: "Contact" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`transition
+                  ${isActive(href)
+                    ? "text-amber-300 font-bold"
+                    : "text-amber-200 hover:text-amber-300"
+                  }
+                `}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}
     </header>
   );
 }
+

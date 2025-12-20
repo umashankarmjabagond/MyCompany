@@ -1,35 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const aboutData = [
-    {
-        title: 'Company Overview',
-        content:
-            'SkillForge AI Technologies Pvt Ltd is a next-generation technology company dedicated to delivering intelligent digital solutions that fuel business growth and operational efficiency. We specialize in web development, mobile application development, AI tool integration, and professional training programs.',
-    },
-    {
-        title: 'Web Development',
-        content:
-            'Our web development services focus on creating highly responsive, scalable, and secure websites that drive engagement and deliver an exceptional user experience.',
-    },
-    {
-        title: 'Mobile Development',
-        content:
-            'In mobile development, we craft intuitive and high-performance applications for both Android and iOS platforms.',
-    },
-    {
-        title: 'AI Tools',
-        content:
-            'Our expertise in AI tools empowers businesses to harness the potential of artificial intelligence. From machine learning models to automation tools and predictive analytics, we help organizations optimize workflows.',
-    },
-    {
-        title: 'Training Programs',
-        content:
-            'Our training programs equip professionals and students with the skills needed to excel in the tech industry with hands-on experience.',
-    },
-];
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { aboutData } from "../constants/textConstant";
 
 export default function About() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -39,43 +12,68 @@ export default function About() {
     };
 
     return (
-        <section className="w-full bg-gray-900 py-16 sm:px-6">
+        <section
+            className="px-2 sm:px-10 py-8">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-3xl font-bold mb-10 text-center text-white">About Us</h2>
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-4"
+                >
+                    <h2
+                        className="text-4xl sm:text-5xl font-bold mb-4
+                                   bg-gradient-to-r from-amber-400 to-yellow-300
+                                   text-transparent bg-clip-text"
+                    >
+                        About Us
+                    </h2>
+                    <p className="text-amber-200/80 max-w-2xl mx-auto text-sm sm:text-base">
+                        Learn more about who we are, what we build, and how we help
+                        businesses and professionals grow with technology.
+                    </p>
+                </motion.div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                     {aboutData.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }} // triggers when 30% of element is visible
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className=" rounded-xl shadow-md overflow-hidden border border-gray-200"
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            className="rounded-2xl overflow-hidden
+                                       bg-gradient-to-br from-amber-900/25 to-black/70
+                                       backdrop-blur-md
+                                       border border-amber-600/30
+                                       shadow-lg shadow-amber-900/30"
                         >
-                            {/* Accordion Header */}
                             <button
                                 onClick={() => toggleAccordion(index)}
-                                className="flex justify-between w-full px-6 py-5 text-left text-lg font-medium text-white transition"
+                                className="flex justify-between items-center w-full
+                                           px-6 py-5 text-left
+                                           text-lg font-semibold
+                                           text-amber-200 hover:text-amber-300
+                                           transition"
                             >
                                 {item.title}
                                 <span
-                                    className={`transform transition-transform duration-300 text-gray-500 ${openIndex === index ? 'rotate-180' : ''
-                                        }`}
+                                    className={`transform transition-transform duration-300
+                                                text-amber-400
+                                                ${openIndex === index ? "rotate-180" : ""}`}
                                 >
                                     ▼
                                 </span>
                             </button>
 
-                            {/* Accordion Content */}
                             <AnimatePresence>
                                 {openIndex === index && (
                                     <motion.div
                                         initial={{ height: 0, opacity: 0 }}
-                                        animate={{ height: 'auto', opacity: 1 }}
+                                        animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                        className="px-6 py-4 text-white text-base"
+                                        transition={{ duration: 0.35 }}
+                                        className="px-6 pb-6 text-amber-200/80 text-sm sm:text-base leading-relaxed"
                                     >
                                         {item.content}
                                     </motion.div>

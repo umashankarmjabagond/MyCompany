@@ -1,8 +1,8 @@
-'use client';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Code, Globe, Smartphone, Brain, Cloud, Lightbulb } from 'lucide-react';
+"use client";
 
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Code, Globe, Smartphone, Brain, Cloud, Lightbulb } from "lucide-react";
 
 const services = [
     {
@@ -45,29 +45,73 @@ const services = [
 
 export default function CoreServices() {
     return (
-        <section className="w-full bg-gray-900 py-16 sm:px-6">
+        <section
+            className="px-4 sm:px-10 py-8">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl font-semibold mb-10 text-center text-white">
-                    Our Core Services
-                </h2>
-                <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-12"
+                >
+                    <h2
+                        className="text-3xl sm:text-4xl font-bold mb-4
+                                   bg-gradient-to-r from-amber-400 to-yellow-300
+                                   text-transparent bg-clip-text"
+                    >
+                        Our Core Services
+                    </h2>
+                    <p className="text-amber-200/80 max-w-2xl mx-auto text-sm sm:text-base">
+                        Premium technology services crafted to help businesses
+                        build, scale, and innovate with confidence.
+                    </p>
+                </motion.div>
+
+                <div className="grid gap-8 md:grid-cols-3">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.href}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.6, delay: index * 0.15, type: 'spring', stiffness: 100 }}
-                            className="bg-[#1a1a1a] rounded-xl p-6 hover:shadow-lg transition-all"
+                            transition={{
+                                duration: 0.6,
+                                delay: index * 0.12,
+                                type: "spring",
+                                stiffness: 90,
+                            }}
+                            className="group rounded-3xl p-6 sm:p-8
+                                       bg-gradient-to-br from-amber-900/25 to-black/70
+                                       backdrop-blur-md
+                                       border border-amber-600/30
+                                       shadow-xl shadow-amber-900/30
+                                       hover:shadow-amber-700/40
+                                       transition-all"
                         >
-                            <div className="flex items-center mb-4 text-blue-500">
-                                {service.icon}
-                                <h3 className="ml-3 text-lg font-semibold text-blue-500">{service.title}</h3>
+                            <div className="flex items-center mb-4">
+                                <div
+                                    className="p-3 rounded-xl
+                                               bg-black/50
+                                               border border-amber-700/40
+                                               text-amber-300
+                                               group-hover:text-amber-200 transition"
+                                >
+                                    {service.icon}
+                                </div>
+                                <h3 className="ml-4 text-lg font-semibold text-amber-300">
+                                    {service.title}
+                                </h3>
                             </div>
-                            <p className="text-gray-400 text-sm sm:text-base">{service.desc}</p>
+
+                            <p className="text-amber-200/80 text-sm sm:text-base leading-relaxed">
+                                {service.desc}
+                            </p>
+
                             <Link
                                 href={service.href}
-                                className="mt-4 inline-block text-blue-500 hover:underline font-medium"
+                                className="mt-5 inline-block text-sm font-semibold
+                                           text-amber-300 hover:text-amber-200
+                                           transition"
                             >
                                 Learn More →
                             </Link>

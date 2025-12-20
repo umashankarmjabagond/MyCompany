@@ -24,8 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html lang="en">
