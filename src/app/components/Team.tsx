@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import { teamMembers } from "../constants/textConstant";
 
 export default function TeamSection() {
+    const getInitials = (name: string) =>
+        name
+            .split(" ")
+            .map((word) => word[0])
+            .join("")
+            .slice(0, 2)
+            .toUpperCase();
     return (
         <section
             className="px-4 sm:px-10 py-8">
@@ -55,15 +62,31 @@ export default function TeamSection() {
                                            transition-all"
                             >
                                 <div
-                                    className="w-32 h-32 mb-5 rounded-full overflow-hidden
-                                               border-2 border-amber-400
-                                               shadow-lg shadow-amber-900/40"
+                                    className="w-32 h-32 mb-5 rounded-full
+             border-2 border-amber-400
+             shadow-lg shadow-amber-900/40
+             flex items-center justify-center
+             overflow-hidden
+             bg-gradient-to-br from-amber-900/60 to-black"
                                 >
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-fit"
-                                    />
+                                    {member.image ? (
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-full h-full object-fill"
+                                        />
+                                    ) : (
+                                        <span
+                                            className="
+                                                        text-3xl font-extrabold
+                                                        bg-gradient-to-r from-amber-300 to-yellow-200
+                                                        text-transparent bg-clip-text
+                                                        tracking-widest
+                                                    "
+                                        >
+                                            {getInitials(member.name)}
+                                        </span>
+                                    )}
                                 </div>
 
                                 <h3 className="text-xl font-semibold text-amber-300">

@@ -299,7 +299,7 @@ export const teamMembers = [
     qualification: "MBA in Business Management",
     experience: "4+ years in Marketing & Operations",
     designation: "Co-Founder & Director",
-    image: "/team/priya.jpg",
+    image: null,
   },
   {
     name: "Mahesh Masal",
