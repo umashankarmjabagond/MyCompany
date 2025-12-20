@@ -6,6 +6,7 @@ import { JSX } from "react";
 import CoreServices from "./components/CoreServices";
 import TeamSection from "./components/Team";
 import ProcessSection from "./components/Process";
+import GoldDivider from "./components/GoldDivider";
 
 
 const Hero = dynamic(() => import("./components/Hero"), { ssr: true });
@@ -59,10 +60,15 @@ export default function Home(): JSX.Element {
       />
 
       <Hero />
+      <GoldDivider />
       <About />
+      <GoldDivider />
       <ProjectsSection />
+      <GoldDivider />
       <CoreServices />
+      <GoldDivider />
       <ProcessSection />
+      <GoldDivider />
       <TeamSection />
     </main>
   );

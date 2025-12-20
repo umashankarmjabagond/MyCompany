@@ -18,7 +18,9 @@ export default function ContactForm(): JSX.Element {
     error: null,
   });
 
-  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const onChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
@@ -52,47 +54,35 @@ export default function ContactForm(): JSX.Element {
   };
 
   return (
-    <section className="flex items-center justify-center px-4">
+    <section>
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-2xl space-y-6
-                   bg-gradient-to-br from-amber-900/30 to-black/60
-                   backdrop-blur-md
-                   border border-amber-600/40
-                   rounded-2xl p-6 sm:p-10
-                   shadow-xl shadow-amber-900/30"
+        className="
+          bg-gradient-to-br from-amber-900/30 to-black/60
+          backdrop-blur-md
+          border border-amber-600/40
+          rounded-3xl
+          p-11
+          shadow-2xl shadow-amber-900/40
+        "
       >
-        {/* ===== TITLE ===== */}
-        <div className="text-center mb-4">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-amber-400 to-yellow-300 text-transparent bg-clip-text">
-            Contact Us
-          </h1>
-          <p className="text-amber-200/80 text-sm mt-2">
-            Tell us about your idea and we’ll get back to you shortly.
-          </p>
-        </div>
-
-        {/* Honeypot */}
         <div className="hidden">
-          <label>
-            Leave empty
-            <input name="hp" value={form.hp} onChange={onChange} />
-          </label>
+          <input name="hp" value={form.hp} onChange={onChange} />
         </div>
 
-        {/* ===== INPUTS ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <input
             name="name"
             value={form.name}
             onChange={onChange}
             placeholder="Full name *"
             required
-            className="w-full px-4 py-3 rounded-lg bg-black/50
+            className="md:col-span-2 px-5 py-3 h-[52px] rounded-xl bg-black/50
                        border border-amber-700/40
                        text-amber-100 placeholder:text-amber-300/50
                        focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
+
           <input
             name="email"
             type="email"
@@ -100,43 +90,42 @@ export default function ContactForm(): JSX.Element {
             onChange={onChange}
             placeholder="Email *"
             required
-            className="w-full px-4 py-3 rounded-lg bg-black/50
+            className="md:col-span-2 px-5 py-3 h-[52px] rounded-xl bg-black/50
+                       border border-amber-700/40
+                       text-amber-100 placeholder:text-amber-300/50
+                       focus:outline-none focus:ring-2 focus:ring-amber-400"
+          />
+
+          <input
+            name="phone"
+            value={form.phone}
+            onChange={onChange}
+            placeholder="Phone (optional)"
+            className="md:col-span-1 px-5 py-3 h-[52px] rounded-xl bg-black/50
+                       border border-amber-700/40
+                       text-amber-100 placeholder:text-amber-300/50
+                       focus:outline-none focus:ring-2 focus:ring-amber-400"
+          />
+
+          <textarea
+            name="message"
+            value={form.message}
+            onChange={onChange}
+            placeholder="Tell us about your project *"
+            required
+            className="md:col-span-3 px-5 py-3 min-h-[52px] resize-y
+                       rounded-xl bg-black/50
                        border border-amber-700/40
                        text-amber-100 placeholder:text-amber-300/50
                        focus:outline-none focus:ring-2 focus:ring-amber-400"
           />
         </div>
 
-        <input
-          name="phone"
-          value={form.phone}
-          onChange={onChange}
-          placeholder="Phone (optional)"
-          className="w-full px-4 py-3 rounded-lg bg-black/50
-                     border border-amber-700/40
-                     text-amber-100 placeholder:text-amber-300/50
-                     focus:outline-none focus:ring-2 focus:ring-amber-400"
-        />
-
-        <textarea
-          name="message"
-          value={form.message}
-          onChange={onChange}
-          placeholder="Tell us about your project *"
-          required
-          rows={6}
-          className="w-full px-4 py-3 rounded-lg resize-none bg-black/50
-                     border border-amber-700/40
-                     text-amber-100 placeholder:text-amber-300/50
-                     focus:outline-none focus:ring-2 focus:ring-amber-400"
-        />
-
-        {/* ===== ACTIONS ===== */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8">
           <button
             type="submit"
             disabled={status.loading}
-            className="px-8 py-3 rounded-lg font-semibold text-black
+            className="px-12 py-2 rounded-xl font-semibold text-black
                        bg-gradient-to-r from-amber-400 to-yellow-300
                        hover:from-amber-300 hover:to-yellow-200
                        transition-all disabled:opacity-60"
@@ -149,6 +138,7 @@ export default function ContactForm(): JSX.Element {
               Message sent successfully!
             </span>
           )}
+
           {status.ok === false && (
             <span className="text-red-400 text-sm font-medium">
               Error: {status.error || "Unable to send"}

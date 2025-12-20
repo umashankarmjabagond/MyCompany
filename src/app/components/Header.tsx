@@ -22,13 +22,26 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg sm:text-xl font-bold tracking-tight text-white"
+          className="flex items-center gap-2 text-lg sm:text-xl font-bold tracking-tight"
         >
-          SkillForge{" "}
-          <span className="bg-gradient-to-r from-amber-400 to-yellow-300 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-amber-500 to-amber-200 text-transparent bg-clip-text">
+            SkillForge
+          </span>
+
+          <span
+            className="
+      px-2 py-0.5 rounded-md
+      bg-gradient-to-r from-amber-600 to-yellow-300
+      text-black text-sm font-extrabold
+      shadow-md shadow-amber-500/40
+    "
+          >
             AI
-          </span>{" "}
-          Technologies
+          </span>
+
+          <span className="bg-gradient-to-r from-amber-400 to-amber-200 text-transparent bg-clip-text font-semibold">
+            Technologies
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center space-x-2 text-sm font-semibold">

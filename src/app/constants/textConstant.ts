@@ -232,8 +232,11 @@ export const wevDevSection = [
     icon: Code,
     image: "/frontend.jpg",
     content: `
-We build high-performing, responsive, and visually stunning web interfaces using React, Next.js, and TailwindCSS.
-Our frontend development emphasizes UX, accessibility, and speed — ensuring users enjoy every click.
+We design and build high-performing, responsive, and visually engaging web interfaces using modern frameworks such as React, Next.js, and TailwindCSS.
+
+Our frontend approach focuses on user experience, accessibility, and performance. We ensure fast load times, intuitive navigation, and consistent design across devices — from mobile to large screens.
+
+By following best practices in component architecture, state management, and SEO-friendly rendering, we deliver frontends that are not only beautiful but also scalable and easy to maintain as your product grows.
     `,
   },
   {
@@ -242,8 +245,11 @@ Our frontend development emphasizes UX, accessibility, and speed — ensuring us
     icon: Server,
     image: "/backend.jpg",
     content: `
-We create robust backend APIs using Node.js, Express, and Strapi.
-From authentication to business logic, our architecture ensures reliability, scalability, and security.
+We build secure, scalable, and maintainable backend systems using Node.js, Express, and Strapi.
+
+Our backend solutions handle authentication, authorization, business logic, and data workflows with reliability and performance in mind. We design APIs that are easy to integrate, well-documented, and optimized for both web and mobile applications.
+
+By applying clean architecture principles and industry-standard security practices, we ensure your backend can grow smoothly with increasing users and data volume.
     `,
   },
   {
@@ -252,8 +258,11 @@ From authentication to business logic, our architecture ensures reliability, sca
     icon: Database,
     image: "/database.avif",
     content: `
-We handle both SQL (PostgreSQL) and NoSQL (MongoDB) databases — designing normalized schemas,
-building optimized queries, and ensuring smooth data integration for large-scale systems.
+We design and manage robust database systems using both SQL (PostgreSQL) and NoSQL (MongoDB) technologies.
+
+Our database strategy includes schema design, indexing, query optimization, and data integrity management to ensure fast and reliable access to your data. We focus on scalability and consistency, even for data-intensive applications.
+
+Whether it's transactional data or analytical workloads, we ensure your data layer remains secure, performant, and future-ready.
     `,
   },
   {
@@ -262,8 +271,11 @@ building optimized queries, and ensuring smooth data integration for large-scale
     icon: Cloud,
     image: "/cloud.avif",
     content: `
-We implement continuous integration, containerization, and AWS deployments.
-Docker, CI/CD pipelines, and cloud monitoring help us deliver faster, safer, and more scalable releases.
+We implement cloud-native and DevOps best practices to streamline development and deployment workflows.
+
+Using Docker, CI/CD pipelines, and AWS cloud services, we automate builds, testing, and deployments — reducing release risks and accelerating time to market.
+
+Our DevOps approach ensures high availability, monitoring, and scalability, so your application stays reliable even under heavy traffic and evolving business demands.
     `,
   },
   {
@@ -272,8 +284,11 @@ Docker, CI/CD pipelines, and cloud monitoring help us deliver faster, safer, and
     icon: Rocket,
     image: "/rocket.jpg",
     content: `
-Once your app is ready, we focus on SEO, performance tuning, and analytics integration.
-Your web app stays fast, secure, and discoverable across platforms.
+Once your application is production-ready, we focus on deployment, optimization, and long-term performance.
+
+We handle SEO optimization, performance tuning, caching strategies, and analytics integration to ensure your product is fast, discoverable, and measurable.
+
+Our goal is not just to launch your application, but to continuously improve its speed, stability, and visibility — helping your business achieve real results.
     `,
   },
 ];

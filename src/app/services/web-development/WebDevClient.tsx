@@ -107,13 +107,14 @@ export default function WebDevClient() {
                                        shadow-xl shadow-amber-900/30"
                         >
                             <div className="md:w-1/2 w-full">
-                                <Image
-                                    src={image}
-                                    alt={title}
-                                    width={500}
-                                    height={350}
-                                    className="rounded-2xl object-cover w-full shadow-lg shadow-black/40"
-                                />
+                                <div className="relative w-full h-48 sm:h-56 md:h-64">
+                                    <Image
+                                        src={image}
+                                        alt={title}
+                                        fill
+                                        className="rounded-2xl object-cover shadow-lg shadow-black/40"
+                                    />
+                                </div>
                             </div>
 
                             <div className="md:w-1/2 w-full">

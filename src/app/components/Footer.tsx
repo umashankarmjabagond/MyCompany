@@ -22,13 +22,13 @@ export default function Footer() {
           {/* ===== FOOTER NAV ===== */}
           <nav className="flex flex-wrap items-center justify-center gap-5 text-sm font-medium">
             <Link
-              href="/privacy"
+              href=""
               className="text-amber-200 hover:text-amber-300 transition"
             >
               Privacy
             </Link>
             <Link
-              href="/terms"
+              href=""
               className="text-amber-200 hover:text-amber-300 transition"
             >
               Terms
