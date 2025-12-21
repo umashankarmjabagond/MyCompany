@@ -27,8 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html lang="en">
-      {/* <body className="min-h-screen flex flex-col text-slate-800 font-sans"> */}
-      <body suppressHydrationWarning className="min-h-screen flex flex-col">
+      <body suppressHydrationWarning className="bg-black min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

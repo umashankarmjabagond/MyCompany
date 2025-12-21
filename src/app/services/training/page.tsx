@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TrainingPage() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+    <main className="bg-black max-w-7xl mx-auto px-4 sm:px-6 py-2">
       <TrainingClient />
     </main>
   );

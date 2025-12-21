@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AiToolsPage() {
   return (
-    <main className="max-w-7xl mx-auto px-2 sm:px-6 py-12 sm:py-12">
+    <main className="bg-black max-w-7xl mx-auto px-2 sm:px-6 py-12 sm:py-12">
       <AiToolsClient />
     </main>
   );
