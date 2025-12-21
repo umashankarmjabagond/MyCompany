@@ -103,7 +103,7 @@ export default function WebDevClient() {
                                        bg-gradient-to-br from-amber-900/25 to-black/70
                                        backdrop-blur-md
                                        border border-amber-600/30
-                                       rounded-3xl sm:p-10
+                                       rounded-3xl sm:p-10 p-10
                                        shadow-xl shadow-amber-900/30"
                         >
                             <div className="md:w-1/2 w-full">

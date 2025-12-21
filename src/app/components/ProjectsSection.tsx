@@ -44,7 +44,7 @@ export default function ProjectsSection() {
                         >
                             Projects
                         </h2>
-                        <p className={`text-amber-200/80 max-w-2xl mx-auto text-sm sm:text-base`}>
+                        <p className={`text-amber-200/80 max-w-7xl mx-auto text-sm sm:text-base`}>
                             A glimpse into real-world solutions we’ve built across
                             e-commerce, education, and enterprise platforms.
                         </p>
@@ -87,7 +87,7 @@ export default function ProjectsSection() {
                                             >
                                                 {project.icon}
                                             </div>
-                                            <h3 className={`text - xl font - semibold text - amber - 300`}>
+                                            <h3 className={`text-xl font-semibold !text-amber-300`}>
                                                 {project.title}
                                             </h3>
                                         </div>

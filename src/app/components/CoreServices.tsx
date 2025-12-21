@@ -70,7 +70,7 @@ export default function CoreServices() {
                         >
                             Our Core Services
                         </h2>
-                        <p className={`text-amber-200/80 max-w-2xl mx-auto text-sm sm:text-base`}>
+                        <p className={`text-amber-200/80 max-w-7xl mx-auto text-sm sm:text-base`}>
                             Premium technology services crafted to help businesses
                             build, scale, and innovate with confidence.
                         </p>

@@ -29,7 +29,7 @@ export default function TeamSection() {
                     >
                         Founders & Directors
                     </h2>
-                    <p className="text-amber-200/80 max-w-2xl mx-auto text-sm sm:text-base">
+                    <p className="text-amber-200/80 max-w-7xl mx-auto text-sm sm:text-base">
                         Meet the leadership team driving SkillForge AI Technologies
                         with vision, experience, and technical excellence.
                     </p>
